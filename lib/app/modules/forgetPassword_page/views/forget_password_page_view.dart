@@ -12,21 +12,26 @@ class ForgetPasswordPageView extends GetView<ForgetPasswordPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
-          icon: Icon(Icons.arrow_back),
+        automaticallyImplyLeading: false,
+        title: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
+                icon: Icon(Icons.arrow_back),
+              ),
+            ),
+            Center(
+              child: Text(
+                "Forgot Password?",
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+          ],
         ),
-        title: Text(
-          textAlign: TextAlign.center,
-          'Forgot Password?',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            color: Color(0xFF262640),
-          ),
-        ),
-        titleSpacing: 67,
       ),
+
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
@@ -57,7 +62,6 @@ class ForgetPasswordPageView extends GetView<ForgetPasswordPageController> {
 
             Container(
               height: 52,
-              width: 335,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
@@ -92,7 +96,7 @@ class ForgetPasswordPageView extends GetView<ForgetPasswordPageController> {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 backgroundColor: Color(0xFF5A00FF),
-                minimumSize: Size(335, 52),
+                minimumSize: Size(double.infinity, 52),
               ),
               child: Text(
                 'Send Code',

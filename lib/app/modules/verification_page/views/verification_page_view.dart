@@ -14,15 +14,33 @@ class VerificationPageView extends GetView<VerificationPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Get.toNamed(Routes.REGISTER_PAGE),
-          icon: Icon(Icons.arrow_back),
+        automaticallyImplyLeading: false,
+        title: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                onPressed: () => Get.toNamed(Routes.REGISTER_PAGE),
+                icon: Icon(Icons.arrow_back),
+              ),
+            ),
+
+            Center(
+              child: Text(
+                'Verification Code',
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                  color: Color(0xFF262640),
+                ),
+              ),
+            ),
+          ],
         ),
-        title: Text('Verification Code'),
-        titleSpacing: 68,
       ),
 
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -133,7 +151,7 @@ class VerificationPageView extends GetView<VerificationPageController> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 backgroundColor: Color(0xFF5A00FF),
-                minimumSize: Size(335, 52),
+                minimumSize: Size(double.infinity, 52),
               ),
               child: Text(
                 'Continue',
@@ -145,7 +163,7 @@ class VerificationPageView extends GetView<VerificationPageController> {
               ),
             ),
 
-            SizedBox(height: 24,),
+            SizedBox(height: 24),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -165,7 +183,6 @@ class VerificationPageView extends GetView<VerificationPageController> {
                 ),
               ],
             ),
-
           ],
         ),
       ),

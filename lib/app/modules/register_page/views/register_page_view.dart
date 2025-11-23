@@ -54,7 +54,6 @@ class RegisterPageView extends GetView<RegisterPageController> {
 
               Container(
                 height: 52,
-                width: 335,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
@@ -100,7 +99,6 @@ class RegisterPageView extends GetView<RegisterPageController> {
 
               Container(
                 height: 52,
-                width: 335,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
@@ -146,7 +144,6 @@ class RegisterPageView extends GetView<RegisterPageController> {
 
               Container(
                 height: 52,
-                width: 335,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
@@ -192,7 +189,6 @@ class RegisterPageView extends GetView<RegisterPageController> {
 
               Container(
                 height: 52,
-                width: 335,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
@@ -240,7 +236,6 @@ class RegisterPageView extends GetView<RegisterPageController> {
 
               Container(
                 height: 52,
-                width: 335,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
@@ -289,7 +284,7 @@ class RegisterPageView extends GetView<RegisterPageController> {
                   SizedBox(width: 8),
 
                   Text(
-                    'Agree to the Terms of service and Privacy\npolicy.',
+                    'Agree to the Terms of service and Privacy policy.',
                     style: TextStyle(fontSize: 16, color: Color(0xFF767599)),
                   ),
                 ],
@@ -303,7 +298,7 @@ class RegisterPageView extends GetView<RegisterPageController> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  minimumSize: Size(335, 52),
+                  minimumSize: Size(double.infinity, 52),
                   backgroundColor: Color(0xFF5A00FF),
                 ),
                 child: Text(
@@ -401,7 +396,7 @@ class RegisterPageView extends GetView<RegisterPageController> {
                 ],
               ),
 
-              SizedBox(height: 25,),
+              SizedBox(height: 25),
             ],
           ),
         ),

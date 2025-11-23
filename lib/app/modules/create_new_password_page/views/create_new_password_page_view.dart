@@ -14,20 +14,32 @@ class CreateNewPasswordPageView
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => Get.toNamed(Routes.FORGET_PASSWORD_PAGE),
-          icon: Icon(Icons.arrow_back),
+        automaticallyImplyLeading: false,
+        title: Stack(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: IconButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChangedPassword()),
+                ),
+                icon: Icon(Icons.arrow_back),
+              ),
+            ),
+
+            Center(
+              child: Text(
+                'Create New Password',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF262640),
+                ),
+              ),
+            ),
+          ],
         ),
-        title: Text(
-          textAlign: TextAlign.center,
-          'Create New Password',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            color: Color(0xFF262640),
-          ),
-        ),
-        titleSpacing: 67,
       ),
 
       body: Padding(
@@ -61,7 +73,6 @@ class CreateNewPasswordPageView
 
             Container(
               height: 52,
-              width: 335,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
@@ -105,7 +116,6 @@ class CreateNewPasswordPageView
 
             Container(
               height: 52,
-              width: 335,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
@@ -142,7 +152,7 @@ class CreateNewPasswordPageView
               ),
 
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(335, 52),
+                minimumSize: Size(double.infinity, 52),
                 backgroundColor: Color(0xFF5A00FF),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

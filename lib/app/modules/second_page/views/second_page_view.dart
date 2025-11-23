@@ -26,37 +26,45 @@ class SecondPageView extends GetView<SecondPageController> {
           ),
 
           SizedBox(height: 33),
-          Text(
-            textAlign: TextAlign.center,
-            'Every act of care\ncreates a ripple of joy',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
-          ),
-          SizedBox(height: 8),
-          Text(
-            'Send your Grativid via email or SMS',
-            style: TextStyle(fontSize: 16, color: Color(0xFF767599)),
-          ),
 
-          SizedBox(height: 68),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                Text(
+                  textAlign: TextAlign.center,
+                  'Every act of care\ncreates a ripple of joy',
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: 8),
+                Text(
+                  'Send your Grativid via email or SMS',
+                  style: TextStyle(fontSize: 16, color: Color(0xFF767599)),
+                ),
 
-          Icon(Icons.more_horiz, color: Color(0xFF2970FF), size: 30),
+                SizedBox(height: 68),
 
-          ElevatedButton(
-            onPressed: () => Get.toNamed(Routes.WELCOME_PAGE),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xFF5A00FF),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              minimumSize: Size(335, 52),
-            ),
-            child: Text(
-              'Next',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
-              ),
+                Icon(Icons.more_horiz, color: Color(0xFF2970FF), size: 30),
+
+                ElevatedButton(
+                  onPressed: () => Get.toNamed(Routes.WELCOME_PAGE),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFF5A00FF),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    minimumSize: Size(double.infinity, 52),
+                  ),
+                  child: Text(
+                    'Next',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],

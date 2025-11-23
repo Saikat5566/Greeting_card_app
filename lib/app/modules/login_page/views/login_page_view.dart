@@ -52,7 +52,6 @@ class LoginPageView extends GetView<LoginPageController> {
 
             Container(
               height: 52,
-              width: 335,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
@@ -93,7 +92,6 @@ class LoginPageView extends GetView<LoginPageController> {
 
             Container(
               height: 52,
-              width: 335,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 boxShadow: [
@@ -122,24 +120,27 @@ class LoginPageView extends GetView<LoginPageController> {
             SizedBox(height: 20),
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 22,
-                  width: 22,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(6),
-                    color: Color(0xFF5A00FF),
-                  ),
-                  child: Icon(Icons.check, size: 16, color: Colors.white),
+                Row(
+                  children: [
+                    Container(
+                      height: 22,
+                      width: 22,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: Color(0xFF5A00FF),
+                      ),
+                      child: Icon(Icons.check, size: 16, color: Colors.white),
+                    ),
+                    SizedBox(width: 8),
+                    Text(
+                      'Remember me',
+                      style: TextStyle(fontSize: 16, color: Color(0xFF767599)),
+                    ),
+                  ],
                 ),
 
-                SizedBox(width: 8),
-
-                Text(
-                  'Remember me',
-                  style: TextStyle(fontSize: 16, color: Color(0xFF767599)),
-                ),
-                SizedBox(width: 98),
                 GestureDetector(
                   onTap: () => Get.toNamed(Routes.FORGET_PASSWORD_PAGE),
                   child: Text(
@@ -160,7 +161,7 @@ class LoginPageView extends GetView<LoginPageController> {
 
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFF5A00FF),
-                minimumSize: Size(335, 52),
+                minimumSize: Size(double.infinity, 52),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
