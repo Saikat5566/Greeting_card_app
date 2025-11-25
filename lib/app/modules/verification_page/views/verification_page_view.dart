@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 import 'package:greeting_card_app/app/modules/verification_page/views/continue.dart';
 
 import '../../../routes/app_pages.dart';
@@ -140,27 +141,15 @@ class VerificationPageView extends GetView<VerificationPageController> {
 
             SizedBox(height: 110),
 
-            ElevatedButton(
+            CustomElevetedButton(
+              text: 'Continue',
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Continue()),
               ),
-
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                backgroundColor: Color(0xFF5A00FF),
-                minimumSize: Size(double.infinity, 52),
-              ),
-              child: Text(
-                'Continue',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
-              ),
+              color: Color(0xFF5A00FF),
+              textColor: Colors.white,
+              buttonSize: Size(double.infinity, 52),
             ),
 
             SizedBox(height: 24),

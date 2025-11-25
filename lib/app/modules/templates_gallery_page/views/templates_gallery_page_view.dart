@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_bottom_navigation_bar.dart';
+import 'package:greeting_card_app/app/routes/app_pages.dart';
 
-import '../../../routes/app_pages.dart';
+import '../../common_widget/custom_gridview_builder.dart';
 import '../controllers/templates_gallery_page_controller.dart';
 
 class TemplatesGalleryPageView extends GetView<TemplatesGalleryPageController> {
@@ -70,147 +72,15 @@ class TemplatesGalleryPageView extends GetView<TemplatesGalleryPageController> {
 
               SizedBox(height: 16),
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: GridView.builder(
-                  itemCount: listOfTemplates.length,
-                  shrinkWrap: true,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 0.7,
-                    crossAxisSpacing: 13,
-                  ),
-                  itemBuilder: (context, index) => Stack(
-                    alignment: Alignment.bottomCenter,
-                    children: [
-                      Container(
-                        height: 246,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(6),
-                            topRight: Radius.circular(6),
-                          ),
-                        ),
-                        child: Image.asset(listOfTemplates[index]),
-                      ),
-
-                      Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Container(
-                            height: 58,
-                            decoration: BoxDecoration(
-                              color: Color(0xFFF5F0FF),
-                              borderRadius: BorderRadius.only(
-                                bottomRight: Radius.circular(6),
-                                bottomLeft: Radius.circular(6),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Container(
-                              height: 34,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Color(0xFFEBE0FF),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Icon(
-                                      FontAwesomeIcons.crown,
-                                      color: Color(0xFF5A00FF),
-                                    ),
-                                    Text(
-                                      '+10 Gratis',
-                                      style: TextStyle(
-                                        color: Color(0xFF5A00FF),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+              GestureDetector(
+                onTap: () => Get.toNamed(Routes.GRATIVID_CHOICE),
+                child: CustomGridViewBuilder(listOfTemplates: listOfTemplates),
               ),
             ],
           ),
         ),
       ),
-
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        height: 108,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFEFE5FF), Color(0xFFEAE6FF), Color(0xFFEBDEF7)],
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.HOME_PAGE),
-                    icon: Icon(Icons.home_outlined),
-                  ),
-                  Text('Home'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.MY_LIBRARY_PAGE),
-                    icon: Icon(FontAwesomeIcons.book),
-                  ),
-                  Text('Library'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.TEMPLATES_GALLERY_PAGE),
-                    icon: Icon(Icons.grid_on_rounded),
-                  ),
-                  Text('Templates'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.GRATIS_PAGE),
-                    icon: Icon(FontAwesomeIcons.crown),
-                  ),
-                  Text('Gratis'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.PROFILE_PAGE),
-                    icon: Icon(Icons.person_2_outlined),
-                  ),
-                  Text('Profile'),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }

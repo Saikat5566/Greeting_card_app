@@ -1,23 +1,9 @@
 import 'package:get/get.dart';
 
 class HomePageController extends GetxController {
-  //TODO: Implement HomePageController
+  RxBool isSelect = false.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void toggleSelect() {
+    isSelect.value = !isSelect.value;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

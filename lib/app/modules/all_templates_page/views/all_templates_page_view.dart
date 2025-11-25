@@ -52,6 +52,7 @@ class AllTemplatesPageView extends GetView<AllTemplatesPageController> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   color: Colors.white,
+                  border: Border.all(color: Color(0xFFD7C2FF)),
                 ),
                 child: Image.asset(allTemplates[index]),
               ),

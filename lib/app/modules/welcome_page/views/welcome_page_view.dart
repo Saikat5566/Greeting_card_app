@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 
 import 'package:greeting_card_app/app/routes/app_pages.dart';
 
@@ -62,45 +63,23 @@ class WelcomePageView extends GetView<WelcomePageController> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                ElevatedButton(
+                CustomElevetedButton(
                   onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    backgroundColor: Colors.white,
-                    minimumSize: Size(double.infinity, 52),
-                    side: BorderSide(color: Color(0xFF5A00FF)),
-                  ),
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF5A00FF),
-                    ),
-                  ),
+                  text: 'Login',
+                  textColor: Color(0xFF5A00FF),
+                  color: Colors.white,
+                  borderColor: Color(0xFF5A00FF),
+                  buttonSize: Size(double.infinity, 52),
                 ),
 
                 SizedBox(height: 16),
 
-                ElevatedButton(
+                CustomElevetedButton(
                   onPressed: () => Get.toNamed(Routes.REGISTER_PAGE),
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    backgroundColor: Color(0xFF5A00FF),
-                    minimumSize: Size(double.infinity, 52),
-                  ),
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
+                  text: 'Register',
+                  textColor: Colors.white,
+                  color: Color(0xFF5A00FF),
+                  buttonSize: Size(double.infinity, 52),
                 ),
               ],
             ),

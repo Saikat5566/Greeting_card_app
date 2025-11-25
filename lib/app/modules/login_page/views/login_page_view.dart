@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_text_field.dart';
+import 'package:greeting_card_app/app/modules/common_widget/login_options.dart';
 import 'package:greeting_card_app/app/routes/app_pages.dart';
 
 import '../controllers/login_page_controller.dart';
@@ -38,87 +41,18 @@ class LoginPageView extends GetView<LoginPageController> {
             ),
 
             SizedBox(height: 32),
-            Text(
-              textAlign: TextAlign.start,
-              'Email',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF262640),
-              ),
+            CustomTextField(
+              text: 'Email',
+              hintText: 'Enter email address',
+              icon: Icon(Icons.email_outlined),
             ),
 
-            SizedBox(height: 6),
-
-            Container(
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFFE5E7EC),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 0),
-                  ),
-                ],
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: TextField(
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.email, color: Color(0xFF767599), size: 20),
-                    border: InputBorder.none,
-                    hintText: 'Enter your email',
-                    hintStyle: TextStyle(color: Color(0xFF767599)),
-                  ),
-                ),
-              ),
+            CustomTextField(
+              text: 'Password',
+              hintText: 'Enter Password',
+              icon: Icon(Icons.lock_outline),
+              suffixIcon: Icon(Icons.remove_red_eye_outlined),
             ),
-
-            SizedBox(height: 20),
-            Text(
-              textAlign: TextAlign.start,
-              'Password',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF262640),
-              ),
-            ),
-
-            SizedBox(height: 6),
-
-            Container(
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFFE5E7EC),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 0),
-                  ),
-                ],
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: TextField(
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.lock, color: Color(0xFF767599), size: 20),
-                    border: InputBorder.none,
-                    hintText: 'Enter Password',
-                    hintStyle: TextStyle(color: Color(0xFF767599)),
-                  ),
-                ),
-              ),
-            ),
-
-            SizedBox(height: 20),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -156,24 +90,12 @@ class LoginPageView extends GetView<LoginPageController> {
 
             SizedBox(height: 32),
 
-            ElevatedButton(
+            CustomElevetedButton(
               onPressed: () => Get.toNamed(Routes.HOME_PAGE),
-
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF5A00FF),
-                minimumSize: Size(double.infinity, 52),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              child: Text(
-                'Login',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
-              ),
+              text: 'Login',
+              textColor: Colors.white,
+              buttonSize: Size(double.infinity, 52),
+              color: Color(0xFF5A00FF),
             ),
 
             SizedBox(height: 32),
@@ -196,46 +118,7 @@ class LoginPageView extends GetView<LoginPageController> {
 
             SizedBox(height: 24),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 56,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFF0F0F0),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Google.png'),
-                    ),
-                  ),
-                ),
-
-                Container(
-                  height: 56,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFF0F0F0),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Apple.png'),
-                    ),
-                  ),
-                ),
-
-                Container(
-                  height: 56,
-                  width: 100,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Color(0xFFF0F0F0),
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/Facebook.png'),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            LoginOptions(),
 
             SizedBox(height: 32),
 

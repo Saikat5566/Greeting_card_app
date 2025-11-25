@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 
 import '../../../routes/app_pages.dart';
 
@@ -21,7 +22,7 @@ class Continue extends StatelessWidget {
           ),
           child: Column(
             children: [
-              SizedBox(height: 24,),
+              SizedBox(height: 24),
               Image.asset('assets/images/Frame 2147228650.png'),
               SizedBox(height: 24),
               RichText(
@@ -37,22 +38,14 @@ class Continue extends StatelessWidget {
 
               SizedBox(height: 24),
 
-              ElevatedButton(
-                onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(288, 52),
-                  backgroundColor: Color(0xFF5A00FF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: Text(
-                  'Done',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: CustomElevetedButton(
+                  onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
+                  text: 'Done',
+                  color: Color(0xFF5A00FF),
+                  textColor: Colors.white,
+                  buttonSize: Size(double.infinity, 52),
                 ),
               ),
             ],

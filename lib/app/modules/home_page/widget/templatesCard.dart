@@ -10,7 +10,8 @@ class Templatescard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Colors.white
+        color: Colors.white,
+        border: Border.all(color: Color(0xFFD7C2FF)),
       ),
       child: Image.asset(temps),
     );

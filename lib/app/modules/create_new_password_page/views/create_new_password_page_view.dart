@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_text_field.dart';
 import 'package:greeting_card_app/app/modules/create_new_password_page/views/changed_password.dart';
 
 import '../../../routes/app_pages.dart';
@@ -59,112 +61,28 @@ class CreateNewPasswordPageView
 
             SizedBox(height: 32),
 
-            Text(
-              textAlign: TextAlign.start,
-              'New Password',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF262640),
-              ),
+            CustomTextField(
+              text: 'New Password',
+              hintText: 'Enter Password',
+              icon: Icon(Icons.lock_outline),
+              suffixIcon: Icon(Icons.remove_red_eye_outlined),
             ),
 
-            SizedBox(height: 6),
-
-            Container(
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFFE5E7EC),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 0),
-                  ),
-                ],
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: TextField(
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.lock, color: Color(0xFF767599), size: 20),
-                    border: InputBorder.none,
-                    hintText: 'Enter Password',
-                    hintStyle: TextStyle(color: Color(0xFF767599)),
-                    suffixIcon: Icon(Icons.visibility_outlined),
-                    contentPadding: EdgeInsets.only(top: 14),
-                  ),
-                ),
-              ),
+            CustomTextField(
+              text: 'Confirm Password',
+              hintText: 'Enter Password',
+              icon: Icon(Icons.lock_outline),
+              suffixIcon: Icon(Icons.remove_red_eye_outlined),
             ),
 
-            SizedBox(height: 20),
-
-            Text(
-              textAlign: TextAlign.start,
-              'Confirm Password ',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: Color(0xFF262640),
-              ),
-            ),
-
-            SizedBox(height: 6),
-
-            Container(
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFFE5E7EC),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 0),
-                  ),
-                ],
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: TextField(
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.lock, color: Color(0xFF767599), size: 20),
-                    border: InputBorder.none,
-                    hintText: 'Enter Password',
-                    hintStyle: TextStyle(color: Color(0xFF767599)),
-                    suffixIcon: Icon(Icons.visibility_outlined),
-                    contentPadding: EdgeInsets.only(top: 14),
-                  ),
-                ),
-              ),
-            ),
-
-            SizedBox(height: 20),
-
-            ElevatedButton(
+            CustomElevetedButton(
+              text: 'Change Password',
+              color: Color(0xFF5A00FF),
+              textColor: Colors.white,
+              buttonSize: Size(double.infinity, 52),
               onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => ChangedPassword()),
-              ),
-
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(double.infinity, 52),
-                backgroundColor: Color(0xFF5A00FF),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              child: Text(
-                'Change Password',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 18,
-                  color: Colors.white,
-                ),
               ),
             ),
           ],

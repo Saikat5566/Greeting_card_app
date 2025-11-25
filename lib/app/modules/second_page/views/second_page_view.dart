@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 import 'package:greeting_card_app/app/routes/app_pages.dart';
 
 import '../controllers/second_page_controller.dart';
@@ -46,23 +47,12 @@ class SecondPageView extends GetView<SecondPageController> {
 
                 Icon(Icons.more_horiz, color: Color(0xFF2970FF), size: 30),
 
-                ElevatedButton(
+                CustomElevetedButton(
                   onPressed: () => Get.toNamed(Routes.WELCOME_PAGE),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF5A00FF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    minimumSize: Size(double.infinity, 52),
-                  ),
-                  child: Text(
-                    'Next',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
+                  text: 'Next',
+                  color: Color(0xFF5A00FF),
+                  textColor: Colors.white,
+                  buttonSize: Size(double.infinity, 52),
                 ),
               ],
             ),

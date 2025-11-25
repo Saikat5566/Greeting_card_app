@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 
 import '../../../routes/app_pages.dart';
 import '../controllers/verification_page_2_controller.dart';
@@ -137,25 +138,12 @@ class VerificationPage2View extends GetView<VerificationPage2Controller> {
             ),
 
             SizedBox(height: 110),
-
-            ElevatedButton(
+            CustomElevetedButton(
+              text: 'Continue',
+              color: Color(0xFF5A00FF),
               onPressed: () => Get.toNamed(Routes.CREATE_NEW_PASSWORD_PAGE),
-
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                backgroundColor: Color(0xFF5A00FF),
-                minimumSize: Size(double.infinity, 52),
-              ),
-              child: Text(
-                'Continue',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
-              ),
+              textColor: Colors.white,
+              buttonSize: Size(double.infinity, 52),
             ),
 
             SizedBox(height: 24),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 
 import '../../../routes/app_pages.dart';
 
@@ -43,23 +44,14 @@ class ChangedPassword extends StatelessWidget {
               ),
 
               SizedBox(height: 24),
-
-              ElevatedButton(
-                onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(288, 52),
-                  backgroundColor: Color(0xFF5A00FF),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: Text(
-                  'Back to Login',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 18,
-                    color: Colors.white,
-                  ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: CustomElevetedButton(
+                  text: 'Back to Login',
+                  onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
+                  textColor: Colors.white,
+                  color: Color(0xFF5A00FF),
+                  buttonSize: Size(double.infinity, 52),
                 ),
               ),
             ],

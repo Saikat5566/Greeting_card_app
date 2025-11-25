@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
-
-import 'package:get/get.dart';
-import 'package:greeting_card_app/app/routes/app_pages.dart';
-
-import '../controllers/home_controller.dart';
-
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class SplashScreen extends GetView<HomeController> {
-  const SplashScreen({super.key});
+import 'package:get/get.dart';
 
+import '../controllers/splash_controller.dart';
+
+class SplashView extends GetView<SplashController> {
+
+  const SplashView({super.key});
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 3), () => Get.toNamed(Routes.FIRST_PAGE));
-
     return Scaffold(
       backgroundColor: Color(0xFFEFE5FF),
       body: Column(

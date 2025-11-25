@@ -1,0 +1,2 @@
+module greeting.card.app {
+}

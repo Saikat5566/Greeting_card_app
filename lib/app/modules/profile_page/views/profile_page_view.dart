@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_bottom_navigation_bar.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 
 import '../../../routes/app_pages.dart';
 import '../controllers/profile_page_controller.dart';
@@ -120,120 +122,141 @@ class ProfilePageView extends GetView<ProfilePageController> {
 
             SizedBox(height: 24),
 
-            Container(
-              height: 58,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Color(0xFFF5F0FF),
-                border: Border.all(color: Color(0xFFD7C2FF)),
-              ),
+            GestureDetector(
+              onTap: () => Get.toNamed(Routes.EDIT_PROFILE),
+              child: Container(
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Color(0xFFF5F0FF),
+                  border: Border.all(color: Color(0xFFD7C2FF)),
+                ),
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.shopping_bag_rounded,
-                          color: Color(0xFF5A00FF),
-                        ),
-                        SizedBox(width: 12),
-                        Text(
-                          'My Purchases',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.shopping_bag_rounded,
+                            color: Color(0xFF5A00FF),
                           ),
-                        ),
-                      ],
-                    ),
-                    Icon(Icons.keyboard_arrow_right, color: Color(0xFF5A00FF)),
-                  ],
+                          SizedBox(width: 12),
+                          Text(
+                            'Edit Profile',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Color(0xFF5A00FF),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
             SizedBox(height: 20),
-            Container(
-              height: 76,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Color(0xFFF5F0FF),
-                border: Border.all(color: Color(0xFFD7C2FF)),
-              ),
+            GestureDetector(
+              onTap: () => Get.toNamed(Routes.MANAGE_PACKAGE_PAGE),
+              child: Container(
+                height: 76,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Color(0xFFF5F0FF),
+                  border: Border.all(color: Color(0xFFD7C2FF)),
+                ),
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(Icons.person_2_outlined, color: Color(0xFF5A00FF)),
-                        SizedBox(width: 12),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Manage Package',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.person_2_outlined,
+                            color: Color(0xFF5A00FF),
+                          ),
+                          SizedBox(width: 12),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Manage Package',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'Basic Package',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                                color: Color(0xFF767599),
+                              Text(
+                                'Basic Package',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16,
+                                  color: Color(0xFF767599),
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Icon(Icons.keyboard_arrow_right, color: Color(0xFF5A00FF)),
-                  ],
+                            ],
+                          ),
+                        ],
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Color(0xFF5A00FF),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
 
             SizedBox(height: 20),
 
-            Container(
-              height: 58,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Color(0xFFF5F0FF),
-                border: Border.all(color: Color(0xFFD7C2FF)),
-              ),
+            GestureDetector(
+              onTap: () => Get.toNamed(Routes.MY_PURCHASES_PAGE),
+              child: Container(
+                height: 58,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Color(0xFFF5F0FF),
+                  border: Border.all(color: Color(0xFFD7C2FF)),
+                ),
 
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.shopping_bag_rounded,
-                          color: Color(0xFF5A00FF),
-                        ),
-                        SizedBox(width: 12),
-                        Text(
-                          'My Purchases',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.shopping_bag_rounded,
+                            color: Color(0xFF5A00FF),
                           ),
-                        ),
-                      ],
-                    ),
-                    Icon(Icons.keyboard_arrow_right, color: Color(0xFF5A00FF)),
-                  ],
+                          SizedBox(width: 12),
+                          Text(
+                            'My Purchases',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Icon(
+                        Icons.keyboard_arrow_right,
+                        color: Color(0xFF5A00FF),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -277,95 +300,18 @@ class ProfilePageView extends GetView<ProfilePageController> {
 
             SizedBox(height: 24),
 
-            ElevatedButton(
+            CustomElevetedButton(
+              text: 'Logout',
+              textColor: Colors.white,
+              color: Color(0xFFDC3545),
               onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFDC3545),
-                minimumSize: Size(double.infinity, 48),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.logout, color: Colors.white),
-                  Text(
-                    'Logout',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
+              icon: Icons.logout,
+              buttonSize: Size(double.infinity, 52),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        height: 108,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFEFE5FF), Color(0xFFEAE6FF), Color(0xFFEBDEF7)],
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.HOME_PAGE),
-                    icon: Icon(Icons.home_outlined),
-                  ),
-                  Text('Home'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.MY_LIBRARY_PAGE),
-                    icon: Icon(FontAwesomeIcons.book),
-                  ),
-                  Text('Library'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.TEMPLATES_GALLERY_PAGE),
-                    icon: Icon(Icons.grid_on_rounded),
-                  ),
-                  Text('Templates'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.GRATIS_PAGE),
-                    icon: Icon(FontAwesomeIcons.crown),
-                  ),
-                  Text('Gratis'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.PROFILE_PAGE),
-                    icon: Icon(Icons.person_2_outlined),
-                  ),
-                  Text('Profile'),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }

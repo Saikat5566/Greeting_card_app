@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_text_field.dart';
 import 'package:greeting_card_app/app/routes/app_pages.dart';
 
 import '../controllers/forget_password_page_controller.dart';
@@ -23,10 +25,7 @@ class ForgetPasswordPageView extends GetView<ForgetPasswordPageController> {
               ),
             ),
             Center(
-              child: Text(
-                "Forgot Password?",
-                style: TextStyle(fontSize: 20),
-              ),
+              child: Text("Forgot Password?", style: TextStyle(fontSize: 20)),
             ),
           ],
         ),
@@ -49,63 +48,20 @@ class ForgetPasswordPageView extends GetView<ForgetPasswordPageController> {
 
             SizedBox(height: 32),
 
-            Text(
-              'Email address',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 16,
-                color: Color(0xFF262640),
-              ),
-            ),
-
-            SizedBox(height: 6),
-
-            Container(
-              height: 52,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFFE5E7EC),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: Offset(0, 0),
-                  ),
-                ],
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: TextField(
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.email, color: Color(0xFF767599), size: 20),
-                    border: InputBorder.none,
-                    hintText: 'Enter your email',
-                    hintStyle: TextStyle(color: Color(0xFF767599)),
-                  ),
-                ),
-              ),
+            CustomTextField(
+              text: 'Email',
+              hintText: 'Enter your email',
+              icon: Icon(Icons.email_outlined),
             ),
 
             SizedBox(height: 32),
 
-            ElevatedButton(
+            CustomElevetedButton(
+              text: 'Send Code',
+              color: Color(0xFF5A00FF),
               onPressed: () => Get.toNamed(Routes.VERIFICATION_PAGE_2),
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                backgroundColor: Color(0xFF5A00FF),
-                minimumSize: Size(double.infinity, 52),
-              ),
-              child: Text(
-                'Send Code',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
-                ),
-              ),
+              textColor: Colors.white,
+              buttonSize: Size(double.infinity, 52),
             ),
           ],
         ),

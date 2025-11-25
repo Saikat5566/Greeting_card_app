@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greeting_card_app/app/routes/app_pages.dart';
 
+import '../../common_widget/custom_eleveted_button.dart';
 import '../controllers/first_page_controller.dart';
 
 class FirstPageView extends GetView<FirstPageController> {
@@ -16,8 +17,8 @@ class FirstPageView extends GetView<FirstPageController> {
           Stack(
             alignment: Alignment.center,
             children: [
-              Container(child: Image.asset('assets/images/Ellipse 2068.png')),
-              Container(child: Image.asset('assets/images/_Ð¡Ð»Ð¾Ð¹_1.png')),
+              Image.asset('assets/images/Ellipse 2068.png'),
+              Image.asset('assets/images/_Ð¡Ð»Ð¾Ð¹_1.png'),
             ],
           ),
           SizedBox(height: 33),
@@ -39,24 +40,12 @@ class FirstPageView extends GetView<FirstPageController> {
                 SizedBox(height: 68),
 
                 Icon(Icons.more_horiz, color: Color(0xFF2970FF), size: 30),
-
-                ElevatedButton(
+                CustomElevetedButton(
                   onPressed: () => Get.toNamed(Routes.SECOND_PAGE),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF5A00FF),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    minimumSize: Size(double.infinity, 52),
-                  ),
-                  child: Text(
-                    'Next',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
+                  text: 'Next',
+                  textColor: Colors.white,
+                  color: Color(0xFF5A00FF),
+                  buttonSize: Size(double.infinity, 52),
                 ),
               ],
             ),

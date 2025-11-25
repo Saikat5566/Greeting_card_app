@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
-import 'package:greeting_card_app/app/modules/home_page/views/templatesCard.dart';
-import 'package:greeting_card_app/app/modules/home_page/views/videoImages.dart';
+import 'package:greeting_card_app/app/modules/home_page/widget/templatesCard.dart';
+import 'package:greeting_card_app/app/modules/home_page/widget/videoImages.dart';
 import 'package:greeting_card_app/app/routes/app_pages.dart';
+import '../../common_widget/custom_bottom_navigation_bar.dart';
 import '../controllers/home_page_controller.dart';
 
 class HomePageView extends GetView<HomePageController> {
@@ -184,68 +185,9 @@ class HomePageView extends GetView<HomePageController> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        height: 108,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFEFE5FF), Color(0xFFEAE6FF), Color(0xFFEBDEF7)],
-          ),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.HOME_PAGE),
-                    icon: Icon(Icons.home_outlined),
-                  ),
-                  Text('Home'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.MY_LIBRARY_PAGE),
-                    icon: Icon(FontAwesomeIcons.book),
-                  ),
-                  Text('Library'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.TEMPLATES_GALLERY_PAGE),
-                    icon: Icon(Icons.grid_on_rounded),
-                  ),
-                  Text('Templates'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.GRATIS_PAGE),
-                    icon: Icon(FontAwesomeIcons.crown),
-                  ),
-                  Text('Gratis'),
-                ],
-              ),
-              Column(
-                children: [
-                  IconButton(
-                    onPressed: () => Get.toNamed(Routes.PROFILE_PAGE),
-                    icon: Icon(Icons.person_2_outlined),
-                  ),
-                  Text('Profile'),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }
+
+

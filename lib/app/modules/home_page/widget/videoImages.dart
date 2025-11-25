@@ -11,7 +11,8 @@ class Videoimages extends StatelessWidget {
       height: 74,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: Color(0xFFD7C2FF),
+        color: Color(0xFFF5F0FF),
+        border: Border.all(color: Color(0xFFD7C2FF)),
       ),
       child: Image.asset(videoImages),
     );
