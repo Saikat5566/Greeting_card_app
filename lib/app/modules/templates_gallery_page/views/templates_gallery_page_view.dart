@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:get/get.dart';
 import 'package:greeting_card_app/app/modules/common_widget/custom_bottom_navigation_bar.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_header_nav_bar.dart';
 import 'package:greeting_card_app/app/routes/app_pages.dart';
 
 import '../../common_widget/custom_gridview_builder.dart';
@@ -49,26 +49,7 @@ class TemplatesGalleryPageView extends GetView<TemplatesGalleryPageController> {
           child: Column(
             children: [
               SizedBox(height: 24),
-              Container(
-                height: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Color(0xFFEBE0FF),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('All'),
-                      Text('Birthday'),
-                      Text('Thanks'),
-                      Text('Love'),
-                      Text('Holiday'),
-                    ],
-                  ),
-                ),
-              ),
+              HeaderNavBar(),
 
               SizedBox(height: 16),
 

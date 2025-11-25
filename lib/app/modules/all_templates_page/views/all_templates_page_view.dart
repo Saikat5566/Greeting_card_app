@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../common_widget/custom_templates_gridview_builder.dart';
 import '../controllers/all_templates_page_controller.dart';
 
 class AllTemplatesPageView extends GetView<AllTemplatesPageController> {
@@ -34,32 +35,8 @@ class AllTemplatesPageView extends GetView<AllTemplatesPageController> {
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          SizedBox(height: 24),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: GridView.builder(
-              shrinkWrap: true,
-              itemCount: allTemplates.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 15,
-                crossAxisSpacing: 15,
-                childAspectRatio: 1.5,
-              ),
-              itemBuilder: (context, index) => Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: Colors.white,
-                  border: Border.all(color: Color(0xFFD7C2FF)),
-                ),
-                child: Image.asset(allTemplates[index]),
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: TemplatesGridViewBuilder(allTemplates: allTemplates),
     );
   }
 }
+

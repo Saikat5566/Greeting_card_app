@@ -25,6 +25,8 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const EDIT_PROFILE = _Paths.EDIT_PROFILE;
   static const GRATIVID_CHOICE = _Paths.GRATIVID_CHOICE;
+  static const BIRTHDAY = _Paths.BIRTHDAY;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
 }
 
 abstract class _Paths {
@@ -51,4 +53,6 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const EDIT_PROFILE = '/edit-profile';
   static const GRATIVID_CHOICE = '/grativid-choice';
+  static const BIRTHDAY = '/birthday';
+  static const NOTIFICATION = '/notification';
 }

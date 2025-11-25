@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_listview_builder.dart';
 
 import '../controllers/my_purchases_page_controller.dart';
 
@@ -34,22 +35,7 @@ class MyPurchasesPageView extends GetView<MyPurchasesPageController> {
         child: Column(
           children: [
             SizedBox(height: 24),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: myPurchasesImage.length,
-              itemBuilder: (context, index) => Padding(
-                padding: const EdgeInsets.only(bottom: 12),
-                child: Container(
-                  height: 114,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Color(0xFFF5F0FF),
-                    border: Border.all(color: Color(0xFFD7C2FF)),
-                  ),
-                  child: Image.asset(myPurchasesImage[index]),
-                ),
-              ),
-            ),
+            CustomListViewBuilder(libraryImages: myPurchasesImage, height: 114),
           ],
         ),
       ),

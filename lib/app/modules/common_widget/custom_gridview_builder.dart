@@ -20,16 +20,14 @@ class CustomGridViewBuilder extends StatelessWidget {
           crossAxisCount: 2,
           childAspectRatio: 0.7,
           crossAxisSpacing: 13,
+          mainAxisSpacing: 13,
         ),
         itemBuilder: (context, index) {
           final image = listOfTemplates[index];
 
           return GestureDetector(
             onTap: () {
-              Get.toNamed(
-                Routes.GRATIVID_CHOICE,
-                arguments: image,
-              );
+              Get.toNamed(Routes.GRATIVID_CHOICE, arguments: image);
             },
             child: Stack(
               alignment: Alignment.bottomCenter,
@@ -37,17 +35,14 @@ class CustomGridViewBuilder extends StatelessWidget {
                 Container(
                   height: 246,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      topRight: Radius.circular(16),
-                    ),
+                    borderRadius: BorderRadius.circular(16)
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(16),
                       topRight: Radius.circular(16),
                     ),
-                    child: Image.asset(image, fit: BoxFit.cover),
+                    child: Image.asset(image, fit: BoxFit.cover ),
                   ),
                 ),
 

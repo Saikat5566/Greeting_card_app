@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class GratisPageController extends GetxController {
-  //TODO: Implement GratisPageController
+class NotificationController extends GetxController {
+  //TODO: Implement NotificationController
 
   final count = 0.obs;
   @override

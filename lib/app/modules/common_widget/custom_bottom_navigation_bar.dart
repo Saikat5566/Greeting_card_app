@@ -53,7 +53,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             Column(
               children: [
                 IconButton(
-                  onPressed: () => Get.toNamed(Routes.GRATIS_PAGE),
+                  onPressed: () => Get.toNamed(Routes.MANAGE_PACKAGE_PAGE),
                   icon: Icon(FontAwesomeIcons.crown),
                 ),
                 Text('Gratis'),

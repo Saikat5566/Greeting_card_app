@@ -6,6 +6,7 @@ import 'package:greeting_card_app/app/modules/common_widget/custom_bottom_naviga
 import 'package:greeting_card_app/app/modules/common_widget/custom_eleveted_button.dart';
 
 import '../../../routes/app_pages.dart';
+import '../../common_widget/custom_profile_page.dart';
 import '../controllers/profile_page_controller.dart';
 
 class ProfilePageView extends GetView<ProfilePageController> {
@@ -124,178 +125,40 @@ class ProfilePageView extends GetView<ProfilePageController> {
 
             GestureDetector(
               onTap: () => Get.toNamed(Routes.EDIT_PROFILE),
-              child: Container(
+              child: ProfileDecoration(
                 height: 58,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Color(0xFFF5F0FF),
-                  border: Border.all(color: Color(0xFFD7C2FF)),
-                ),
-
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.shopping_bag_rounded,
-                            color: Color(0xFF5A00FF),
-                          ),
-                          SizedBox(width: 12),
-                          Text(
-                            'Edit Profile',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Color(0xFF5A00FF),
-                      ),
-                    ],
-                  ),
-                ),
+                text: 'Edit Profile',
+                leftIcon: Icons.person_2_outlined,
+                rightIcon: Icons.arrow_forward_ios_rounded,
               ),
             ),
             SizedBox(height: 20),
             GestureDetector(
               onTap: () => Get.toNamed(Routes.MANAGE_PACKAGE_PAGE),
-              child: Container(
-                height: 76,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Color(0xFFF5F0FF),
-                  border: Border.all(color: Color(0xFFD7C2FF)),
-                ),
-
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.person_2_outlined,
-                            color: Color(0xFF5A00FF),
-                          ),
-                          SizedBox(width: 12),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Manage Package',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              Text(
-                                'Basic Package',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 16,
-                                  color: Color(0xFF767599),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Color(0xFF5A00FF),
-                      ),
-                    ],
-                  ),
-                ),
+              child: ProfileDecoration(
+                height: 78,
+                text: 'Manage Package',
+                subText: 'Basic Package',
+                leftIcon: Icons.credit_card,
+                rightIcon: Icons.arrow_forward_ios_rounded,
               ),
             ),
-
             SizedBox(height: 20),
-
             GestureDetector(
               onTap: () => Get.toNamed(Routes.MY_PURCHASES_PAGE),
-              child: Container(
+              child: ProfileDecoration(
                 height: 58,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: Color(0xFFF5F0FF),
-                  border: Border.all(color: Color(0xFFD7C2FF)),
-                ),
-
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.shopping_bag_rounded,
-                            color: Color(0xFF5A00FF),
-                          ),
-                          SizedBox(width: 12),
-                          Text(
-                            'My Purchases',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Color(0xFF5A00FF),
-                      ),
-                    ],
-                  ),
-                ),
+                text: 'My Purchases',
+                leftIcon: Icons.shopping_bag_outlined,
+                rightIcon: Icons.arrow_forward_ios_rounded,
               ),
             ),
-
             SizedBox(height: 20),
-
-            Container(
+            ProfileDecoration(
               height: 58,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                color: Color(0xFFF5F0FF),
-                border: Border.all(color: Color(0xFFD7C2FF)),
-              ),
-
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.delete_forever_outlined,
-                          color: Color(0xFF5A00FF),
-                        ),
-                        SizedBox(width: 12),
-                        Text(
-                          'Delete Account',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Icon(Icons.keyboard_arrow_right, color: Color(0xFF5A00FF)),
-                  ],
-                ),
-              ),
+              text: 'Delete Account',
+              leftIcon: Icons.delete_forever_outlined,
+              rightIcon: Icons.arrow_forward_ios_rounded,
             ),
 
             SizedBox(height: 24),
@@ -306,7 +169,6 @@ class ProfilePageView extends GetView<ProfilePageController> {
               color: Color(0xFFDC3545),
               onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
               icon: Icons.logout,
-              buttonSize: Size(double.infinity, 52),
             ),
           ],
         ),

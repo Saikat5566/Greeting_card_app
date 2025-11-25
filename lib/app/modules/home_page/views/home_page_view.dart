@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
 import 'package:get/get.dart';
-import 'package:greeting_card_app/app/modules/home_page/widget/templatesCard.dart';
-import 'package:greeting_card_app/app/modules/home_page/widget/videoImages.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_listview_builder.dart';
+import 'package:greeting_card_app/app/modules/common_widget/custom_templates_gridview_builder.dart';
 import 'package:greeting_card_app/app/routes/app_pages.dart';
 import '../../common_widget/custom_bottom_navigation_bar.dart';
+import '../../common_widget/custom_texts.dart';
 import '../controllers/home_page_controller.dart';
 
 class HomePageView extends GetView<HomePageController> {
@@ -65,9 +64,12 @@ class HomePageView extends GetView<HomePageController> {
                           ),
                         ),
 
-                        Icon(
-                          Icons.notifications_none,
-                          color: Color(0xFF5A00FF),
+                        InkWell(
+                          onTap: () => Get.toNamed(Routes.NOTIFICATION),
+                          child: Icon(
+                            Icons.notifications_none,
+                            color: Color(0xFF5A00FF),
+                          ),
                         ),
                       ],
                     ),
@@ -109,77 +111,24 @@ class HomePageView extends GetView<HomePageController> {
 
             SizedBox(height: 24),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Popular Templates',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF262640),
-                    ),
-                  ),
-
-                  InkWell(
-                    onTap: () => Get.toNamed(Routes.ALL_TEMPLATES_PAGE),
-                    child: Text(
-                      'See all',
-                      style: TextStyle(color: Color(0xFF767599)),
-                    ),
-                  ),
-                ],
+            InkWell(
+              onTap: () => Get.toNamed(Routes.ALL_TEMPLATES_PAGE),
+              child: CustomTexts(
+                mainText: 'Popular Templates',
+                subText: 'See all',
               ),
             ),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: GridView.builder(
-                shrinkWrap: true,
-                itemCount: temps.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 1.8,
-                  crossAxisSpacing: 17,
-                  mainAxisSpacing: 15,
-                ),
-                itemBuilder: (context, index) =>
-                    Templatescard(temps: temps[index]),
-              ),
-            ),
+            TemplatesGridViewBuilder(allTemplates: temps),
 
             SizedBox(height: 24),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'My Recent Videos',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Color(0xFF262640),
-                    ),
-                  ),
-
-                  Text('See all', style: TextStyle(color: Color(0xFF767599))),
-                ],
-              ),
-            ),
+            CustomTexts(mainText: 'My Recent Videos', subText: 'See all'),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: videoImages.length,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: Videoimages(videoImages: videoImages[index]),
-                ),
+              child: CustomListViewBuilder(
+                libraryImages: videoImages,
+                height: 78,
               ),
             ),
           ],
@@ -189,5 +138,3 @@ class HomePageView extends GetView<HomePageController> {
     );
   }
 }
-
-

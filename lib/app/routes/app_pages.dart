@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import '../modules/all_templates_page/bindings/all_templates_page_binding.dart';
 import '../modules/all_templates_page/views/all_templates_page_view.dart';
+import '../modules/birthday/bindings/birthday_binding.dart';
+import '../modules/birthday/views/birthday_view.dart';
 import '../modules/create_new_password_page/bindings/create_new_password_page_binding.dart';
 import '../modules/create_new_password_page/views/create_new_password_page_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
@@ -10,8 +12,6 @@ import '../modules/first_page/bindings/first_page_binding.dart';
 import '../modules/first_page/views/first_page_view.dart';
 import '../modules/forgetPassword_page/bindings/forget_password_page_binding.dart';
 import '../modules/forgetPassword_page/views/forget_password_page_view.dart';
-import '../modules/gratis_page/bindings/gratis_page_binding.dart';
-import '../modules/gratis_page/views/gratis_page_view.dart';
 import '../modules/grativid_choice/bindings/grativid_choice_binding.dart';
 import '../modules/grativid_choice/views/grativid_choice_view.dart';
 import '../modules/home_page/bindings/home_page_binding.dart';
@@ -24,6 +24,8 @@ import '../modules/my_library_page/bindings/my_library_page_binding.dart';
 import '../modules/my_library_page/views/my_library_page_view.dart';
 import '../modules/my_purchases_page/bindings/my_purchases_page_binding.dart';
 import '../modules/my_purchases_page/views/my_purchases_page_view.dart';
+import '../modules/notification/bindings/notification_binding.dart';
+import '../modules/notification/views/notification_view.dart';
 import '../modules/profile_page/bindings/profile_page_binding.dart';
 import '../modules/profile_page/views/profile_page_view.dart';
 import '../modules/register_page/bindings/register_page_binding.dart';
@@ -120,11 +122,6 @@ class AppPages {
       binding: TemplatesGalleryPageBinding(),
     ),
     GetPage(
-      name: _Paths.GRATIS_PAGE,
-      page: () => const GratisPageView(),
-      binding: GratisPageBinding(),
-    ),
-    GetPage(
       name: _Paths.PROFILE_PAGE,
       page: () => const ProfilePageView(),
       binding: ProfilePageBinding(),
@@ -148,6 +145,16 @@ class AppPages {
       name: _Paths.GRATIVID_CHOICE,
       page: () => GratividChoiceView(),
       binding: GratividChoiceBinding(),
+    ),
+    GetPage(
+      name: _Paths.BIRTHDAY,
+      page: () => const BirthdayView(),
+      binding: BirthdayBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION,
+      page: () => const NotificationView(),
+      binding: NotificationBinding(),
     ),
   ];
 }

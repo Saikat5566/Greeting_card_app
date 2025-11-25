@@ -28,8 +28,7 @@ class CustomElevetedButton extends StatelessWidget {
         side: BorderSide(color: borderColor ?? Colors.transparent),
         backgroundColor: color,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        minimumSize: //Size(double.infinity, 52),
-            buttonSize,
+        minimumSize: buttonSize,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
