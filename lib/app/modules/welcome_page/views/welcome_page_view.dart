@@ -57,8 +57,6 @@ class WelcomePageView extends GetView<WelcomePageController> {
 
           SizedBox(height: 20),
 
-          Icon(Icons.more_horiz, color: Color(0xFF2970FF), size: 30),
-
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
