@@ -16,34 +16,15 @@ class CreateNewPasswordPageView
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Stack(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ChangedPassword()),
-                ),
-                icon: Icon(Icons.arrow_back),
-              ),
-            ),
-
-            Center(
-              child: Text(
-                'Create New Password',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF262640),
-                ),
-              ),
-            ),
-          ],
+        title: Text(
+          'Create New Password',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            color: Color(0xFF262640),
+          ),
         ),
       ),
-
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

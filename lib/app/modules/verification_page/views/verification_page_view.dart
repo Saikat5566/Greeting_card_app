@@ -15,28 +15,13 @@ class VerificationPageView extends GetView<VerificationPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Stack(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                onPressed: () => Get.toNamed(Routes.REGISTER_PAGE),
-                icon: Icon(Icons.arrow_back),
-              ),
-            ),
-
-            Center(
-              child: Text(
-                'Verification Code',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                  color: Color(0xFF262640),
-                ),
-              ),
-            ),
-          ],
+        title: Text(
+          'Verification Code',
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 18,
+            color: Color(0xFF262640),
+          ),
         ),
       ),
 

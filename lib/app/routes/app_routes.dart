@@ -27,6 +27,15 @@ abstract class Routes {
   static const GRATIVID_CHOICE = _Paths.GRATIVID_CHOICE;
   static const BIRTHDAY = _Paths.BIRTHDAY;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const ANNIVERSARY = _Paths.ANNIVERSARY;
+  static const THANKYOU = _Paths.THANKYOU;
+  static const CONGRATULATION = _Paths.CONGRATULATION;
+  static const WEDDING = _Paths.WEDDING;
+  static const FRIENDSHIP = _Paths.FRIENDSHIP;
+  static const LOVE = _Paths.LOVE;
+  static const NEW_BABY = _Paths.NEW_BABY;
+  static const RETIREMENT = _Paths.RETIREMENT;
+  static const GRADUATION = _Paths.GRADUATION;
 }
 
 abstract class _Paths {
@@ -55,4 +64,13 @@ abstract class _Paths {
   static const GRATIVID_CHOICE = '/grativid-choice';
   static const BIRTHDAY = '/birthday';
   static const NOTIFICATION = '/notification';
+  static const ANNIVERSARY = '/anniversary';
+  static const THANKYOU = '/thankyou';
+  static const CONGRATULATION = '/congratulation';
+  static const WEDDING = '/wedding';
+  static const FRIENDSHIP = '/friendship';
+  static const LOVE = '/love';
+  static const NEW_BABY = '/new-baby';
+  static const RETIREMENT = '/retirement';
+  static const GRADUATION = '/graduation';
 }

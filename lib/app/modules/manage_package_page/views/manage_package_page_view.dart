@@ -29,7 +29,6 @@ class ManagePackagePageView extends GetView<ManagePackagePageController> {
             color: Color(0xFF262640),
           ),
         ),
-        centerTitle: true,
       ),
       body: SingleChildScrollView(
         child: Padding(

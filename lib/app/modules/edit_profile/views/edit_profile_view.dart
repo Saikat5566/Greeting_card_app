@@ -86,7 +86,7 @@ class EditProfileView extends GetView<EditProfileController> {
               color: Color(0xFF5A00FF),
               buttonSize: Size(double.infinity, 52),
               textColor: Colors.white,
-              onPressed: () {},
+              onPressed: () {}     ,
             ),
           ],
         ),

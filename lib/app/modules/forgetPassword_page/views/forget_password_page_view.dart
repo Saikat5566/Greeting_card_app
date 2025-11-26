@@ -14,21 +14,7 @@ class ForgetPasswordPageView extends GetView<ForgetPasswordPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Stack(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                onPressed: () => Get.toNamed(Routes.LOGIN_PAGE),
-                icon: Icon(Icons.arrow_back),
-              ),
-            ),
-            Center(
-              child: Text("Forgot Password?", style: TextStyle(fontSize: 20)),
-            ),
-          ],
-        ),
+        title: Text("Forgot Password?", style: TextStyle(fontSize: 20)),
       ),
 
       body: Padding(
