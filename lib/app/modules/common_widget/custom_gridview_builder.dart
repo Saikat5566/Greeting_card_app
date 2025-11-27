@@ -29,69 +29,59 @@ class CustomGridViewBuilder extends StatelessWidget {
             onTap: () {
               Get.toNamed(Routes.GRATIVID_CHOICE, arguments: image);
             },
-            child: Stack(
-              alignment: Alignment.bottomCenter,
-              children: [
-                Container(
-                  height: 246,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16)
-                  ),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      topRight: Radius.circular(16),
-                    ),
-                    child: Image.asset(image, fit: BoxFit.cover ),
-                  ),
-                ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Color(0xFFD7C2FF)),
+                color: Colors.white,
+              ),
+              child: Column(
+                children: [
+                  Image.asset(listOfTemplates[index], height: 178, width: 170),
 
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      height: 58,
-                      decoration: BoxDecoration(
-                        color: Color(0xFFF5F0FF),
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(16),
-                          bottomLeft: Radius.circular(16),
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        height: 58,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFF5F0FF),
+                          borderRadius: BorderRadius.only(
+                            bottomRight: Radius.circular(8),
+                            bottomLeft: Radius.circular(8),
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Container(
-                        height: 34,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Color(0xFFEBE0FF),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: Container(
+                          height: 34,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            color: Color(0xFFEBE0FF),
+                          ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Icon(
                                 FontAwesomeIcons.crown,
+                                size: 15,
                                 color: Color(0xFF5A00FF),
-                                size: 16,
                               ),
+                              SizedBox(width: 8),
                               Text(
                                 '+10 Gratis',
-                                style: TextStyle(
-                                  color: Color(0xFF5A00FF),
-                                  fontSize: 12,
-                                ),
+                                style: TextStyle(color: Color(0xFF5A00FF)),
                               ),
                             ],
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           );
         },

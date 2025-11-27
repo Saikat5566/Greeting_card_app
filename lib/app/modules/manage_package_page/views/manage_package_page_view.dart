@@ -81,28 +81,15 @@ class ManagePackagePageView extends GetView<ManagePackagePageController> {
 
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Container(
-                            height: 8,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(6),
-                              color: Color(0xFFEBE0FF),
-                            ),
-                          ),
-
-                          Padding(
-                            padding: const EdgeInsets.only(right: 71),
-                            child: Container(
-                              height: 8,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(6),
-                                color: Color(0xFF5A00FF),
-                              ),
-                            ),
-                          ),
-                        ],
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(6),
+                        child: LinearProgressIndicator(
+                          color: Color(0xFF5A00FF),
+                          minHeight: 8,
+                          value: 0.4,
+                          valueColor: AlwaysStoppedAnimation(Color(0xFF5A00FF)),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
                       ),
                     ),
                   ],

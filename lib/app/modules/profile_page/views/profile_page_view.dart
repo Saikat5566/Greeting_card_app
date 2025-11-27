@@ -91,27 +91,14 @@ class ProfilePageView extends GetView<ProfilePageController> {
                             ],
                           ),
                           SizedBox(height: 8),
-                          Stack(
-                            children: [
-                              Container(
-                                height: 8,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(6),
-                                  color: Color(0xFFD1B8FF),
-                                ),
-                              ),
-
-                              Padding(
-                                padding: const EdgeInsets.only(right: 70),
-                                child: Container(
-                                  height: 8,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(6),
-                                    color: Color(0xFF5A00FF),
-                                  ),
-                                ),
-                              ),
-                            ],
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: LinearProgressIndicator(
+                              value: 0.4,
+                              minHeight: 8,
+                              backgroundColor: Color(0xFFD1B8FF),
+                              valueColor: AlwaysStoppedAnimation(Color(0xFF5A00FF)),
+                            ),
                           ),
                         ],
                       ),
