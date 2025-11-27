@@ -12,8 +12,6 @@ import '../modules/congratulation/bindings/congratulation_binding.dart';
 import '../modules/congratulation/views/congratulation_view.dart';
 import '../modules/create_new_password_page/bindings/create_new_password_page_binding.dart';
 import '../modules/create_new_password_page/views/create_new_password_page_view.dart';
-import '../modules/draft_items/bindings/draft_items_binding.dart';
-import '../modules/draft_items/views/draft_items_view.dart';
 import '../modules/edit_profile/bindings/edit_profile_binding.dart';
 import '../modules/edit_profile/views/edit_profile_view.dart';
 import '../modules/first_page/bindings/first_page_binding.dart';
@@ -48,12 +46,10 @@ import '../modules/register_page/bindings/register_page_binding.dart';
 import '../modules/register_page/views/register_page_view.dart';
 import '../modules/retirement/bindings/retirement_binding.dart';
 import '../modules/retirement/views/retirement_view.dart';
-import '../modules/schedule_items/bindings/schedule_items_binding.dart';
-import '../modules/schedule_items/views/schedule_items_view.dart';
+
 import '../modules/second_page/bindings/second_page_binding.dart';
 import '../modules/second_page/views/second_page_view.dart';
-import '../modules/sent_items/bindings/sent_items_binding.dart';
-import '../modules/sent_items/views/sent_items_view.dart';
+
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/templates_gallery_page/bindings/templates_gallery_page_binding.dart';
@@ -224,21 +220,6 @@ class AppPages {
       name: _Paths.GRADUATION,
       page: () => const GraduationView(),
       binding: GraduationBinding(),
-    ),
-    GetPage(
-      name: _Paths.SENT_ITEMS,
-      page: () => const SentItemsView(),
-      binding: SentItemsBinding(),
-    ),
-    GetPage(
-      name: _Paths.SCHEDULE_ITEMS,
-      page: () => const ScheduleItemsView(),
-      binding: ScheduleItemsBinding(),
-    ),
-    GetPage(
-      name: _Paths.DRAFT_ITEMS,
-      page: () => const DraftItemsView(),
-      binding: DraftItemsBinding(),
     ),
   ];
 }

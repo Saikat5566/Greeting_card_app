@@ -43,6 +43,7 @@ class BirthdayView extends GetView<BirthdayController> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: 20,),
             CustomGridViewBuilder(listOfTemplates: birthdayCards),
           ],
         ),

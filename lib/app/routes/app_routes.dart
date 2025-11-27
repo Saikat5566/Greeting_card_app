@@ -36,9 +36,6 @@ abstract class Routes {
   static const NEW_BABY = _Paths.NEW_BABY;
   static const RETIREMENT = _Paths.RETIREMENT;
   static const GRADUATION = _Paths.GRADUATION;
-  static const SENT_ITEMS = _Paths.SENT_ITEMS;
-  static const SCHEDULE_ITEMS = _Paths.SCHEDULE_ITEMS;
-  static const DRAFT_ITEMS = _Paths.DRAFT_ITEMS;
 }
 
 abstract class _Paths {
@@ -76,7 +73,4 @@ abstract class _Paths {
   static const NEW_BABY = '/new-baby';
   static const RETIREMENT = '/retirement';
   static const GRADUATION = '/graduation';
-  static const SENT_ITEMS = '/sent-items';
-  static const SCHEDULE_ITEMS = '/schedule-items';
-  static const DRAFT_ITEMS = '/draft-items';
 }

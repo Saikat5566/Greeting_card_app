@@ -29,9 +29,9 @@ class _HeaderNavBarState extends State<HeaderNavBar> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  selectedItem == 0;
+                  selectedItem = 0;
                 });
-                Get.toNamed(Routes.TEMPLATES_GALLERY_PAGE);
+
               },
               child: Container(
                 alignment: Alignment.center,
@@ -47,9 +47,8 @@ class _HeaderNavBarState extends State<HeaderNavBar> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  selectedItem == 1;
+                  selectedItem = 1;
                 });
-                Get.toNamed(Routes.SENT_ITEMS);
               },
               child: Container(
                 alignment: Alignment.center,
@@ -65,9 +64,8 @@ class _HeaderNavBarState extends State<HeaderNavBar> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  selectedItem == 2;
+                  selectedItem = 2;
                 });
-                Get.toNamed(Routes.SCHEDULE_ITEMS);
               },
               child: Container(
                 alignment: Alignment.center,
@@ -83,9 +81,8 @@ class _HeaderNavBarState extends State<HeaderNavBar> {
             GestureDetector(
               onTap: () {
                 setState(() {
-                  selectedItem == 3;
+                  selectedItem = 3;
                 });
-                Get.toNamed(Routes.DRAFT_ITEMS);
               },
               child: Container(
                 alignment: Alignment.center,
@@ -93,7 +90,7 @@ class _HeaderNavBarState extends State<HeaderNavBar> {
                 width: 83,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: selectedItem == 3 ? Colors.white : null,
+                  color: selectedItem == 3 ? Colors.white : Colors.transparent,
                 ),
                 child: Text('Draft'),
               ),
